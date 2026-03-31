@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import ScrambleText from "./animations/ScrambleText";
 
 const container = {
   hidden: {},
@@ -146,13 +147,12 @@ export default function HeroSection() {
         <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tighter uppercase">
           <motion.div variants={item}>DANIEL_</motion.div>
           <motion.div variants={item}>
-            <span
-              data-text="CAMPUZANO"
+            <ScrambleText
+              text="CAMPUZANO"
+              delay={600}
               className="glitch-text text-transparent border-b-4 border-[#00dddd]"
               style={{ WebkitTextStroke: "1px white" }}
-            >
-              CAMPUZANO
-            </span>
+            />
           </motion.div>
         </h1>
 

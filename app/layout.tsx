@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
+import NeonCursor from "@/components/NeonCursor";
+import ScrollProgress from "@/components/ScrollProgress";
+import BootLoader from "@/components/BootLoader";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -37,6 +40,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <BootLoader />
+        <NeonCursor />
+        <ScrollProgress />
         <div className="scanline-overlay" aria-hidden="true" />
         {children}
       </body>

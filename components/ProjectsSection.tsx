@@ -89,6 +89,21 @@ export default function ProjectsSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
+                {/* CRT scanline overlay on hover */}
+                <div
+                  className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(transparent, transparent 2px, rgba(0,221,221,0.04) 2px, rgba(0,221,221,0.04) 4px)",
+                  }}
+                />
+                {/* PREVIEW badge slides up on hover */}
+                <div className="absolute bottom-0 left-0 right-0 z-30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-[#00dddd]/10 backdrop-blur-sm border-t border-[#00dddd]/30 px-4 py-2 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00dddd] animate-pulse" />
+                  <span className="text-[10px] text-[#00dddd] tracking-[0.3em] uppercase">
+                    PREVIEW_
+                  </span>
+                </div>
                 <div className="absolute top-4 right-4 z-20">
                   <span className="px-3 py-1 bg-[#131313]/80 backdrop-blur text-[10px] text-[#00dddd] border border-[#00dddd]/30">
                     {project.badge}

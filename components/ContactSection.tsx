@@ -8,20 +8,23 @@ const contactItems = [
   {
     icon: "mail",
     label: "EMAIL_PROTOCOL",
-    value: "DANICAMPU56@GMAIL.COM",
+    href: "mailto:danicampu56@gmail.com",
     active: true,
+    external: false,
   },
   {
     icon: "link",
     label: "LINKEDIN_ID",
-    value: "https://www.linkedin.com/in/daniel-campuzano-7149552b7",
+    href: "https://www.linkedin.com/in/daniel-campuzano-7149552b7",
     active: false,
+    external: true,
   },
   {
     icon: "terminal",
     label: "GIT_REPOSITORY",
-    value: "https://github.com/TioDanx/",
+    href: "https://github.com/TioDanx/",
     active: false,
+    external: true,
   },
 ];
 
@@ -68,24 +71,34 @@ export default function ContactSection() {
               </div>
 
               <StaggerGrid className="space-y-6" staggerDelay={0.12}>
-                {contactItems.map(({ icon, label, value, active }) => (
+                {contactItems.map(({ icon, label, href, active, external }) => (
                   <StaggerGrid.Item key={label}>
-                    <motion.div
-                      className={`flex items-center gap-4 border-l-2 ${
-                        active ? "border-[#00dddd]" : "border-[#3a4a49]"
-                      } pl-4 py-2 cursor-pointer hover:bg-[#1c1b1b] transition-colors`}
+                    <motion.a
+                      href={href}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
+                      className={`group relative flex items-center gap-4 pl-4 py-2 overflow-hidden hover:bg-[#1c1b1b] transition-colors`}
                       whileHover={{ x: 4 }}
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     >
+                      {/* animated left border */}
+                      <span
+                        className={`absolute left-0 top-0 w-0.5 h-full origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 bg-[#00dddd]`}
+                      />
+                      <span
+                        className={`absolute left-0 top-0 w-0.5 h-full ${active ? "bg-[#00dddd]" : "bg-[#3a4a49]"}`}
+                        style={{ transformOrigin: "top" }}
+                      />
                       <span className="material-symbols-outlined text-[#00dddd]">
                         {icon}
                       </span>
-                      <div>
-                        <div className="text-lg text-white uppercase tracking-tight">
-                          {label}
-                        </div>
+                      <div className="text-lg text-white uppercase tracking-tight group-hover:text-[#00dddd] transition-colors duration-200">
+                        {label}
                       </div>
-                    </motion.div>
+                      <span className="material-symbols-outlined text-[#00dddd]/0 group-hover:text-[#00dddd]/60 transition-colors text-sm ml-auto mr-2">
+                        north_east
+                      </span>
+                    </motion.a>
                   </StaggerGrid.Item>
                 ))}
               </StaggerGrid>

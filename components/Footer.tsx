@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className="py-12 px-6 lg:px-16 border-t border-[#3a4a49]/10 text-center">
+      <footer className="py-12 pb-28 lg:pb-12 px-6 lg:px-16 border-t border-[#3a4a49]/10 text-center">
         <p className="text-[10px] text-[#b9cac9]/30 tracking-[0.5em] uppercase">
           © 2026 DANIEL_ARCHIVE // ALL_RIGHTS_RESERVED // SYSTEM_END_OF_FILE
         </p>
