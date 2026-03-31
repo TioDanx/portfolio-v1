@@ -1,0 +1,172 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import RevealOnScroll from "./animations/RevealOnScroll";
+import StaggerGrid from "./animations/StaggerGrid";
+
+const projects = [
+  {
+    id: "TS_01",
+    badge: "SAAS",
+    title: "Tailor AI",
+    description:
+      "SaaS platform that uses AI to optimize resumes for specific job postings. Upload a CV and paste a job description — Gemini analyzes both, identifies gaps and missing keywords, generates an ATS-optimized version, and returns an ATS score. Usage history per user, credit-based pricing with Stripe.",
+    mobileDescription:
+      "AI-powered SaaS that rewrites your CV for each job posting and scores it for ATS filters.",
+    stack: ["Next.js 16", "Gemini API", "Firebase", "Stripe", "Puppeteer"],
+    mobileStack: ["NEXT.JS", "GEMINI", "FIREBASE", "STRIPE"],
+    image: "/tailorai.png",
+    deploy: "https://tailor-ai-pi.vercel.app/",
+    repo: "https://github.com/TioDanx/tailor-ai",
+    glowColor: "bg-[#00dddd]/20",
+  },
+  {
+    id: "TS_02",
+    badge: "PWA",
+    title: "Nuestros Planes",
+    description:
+      "Private PWA built exclusively for two — a shared space for couples to organize plans together. Activities flow through states (todo → confirmed → done), each with maps, countdowns, photo galleries, and star reviews. Real-time sync, push notifications, .ics calendar export, and installable on mobile.",
+    mobileDescription:
+      "Private couples PWA with shared plans, countdowns, maps, photo galleries, and real-time sync.",
+    stack: ["Next.js 16", "React 19", "Firebase", "Framer Motion", "Cloudinary"],
+    mobileStack: ["NEXT.JS", "FIREBASE", "CLOUDINARY", "PWA"],
+    image: "/nuestrosplanes.png",
+    deploy: "https://franteamomuchomucho.vercel.app/",
+    repo: "https://github.com/TioDanx/franteamomuchomucho",
+    glowColor: "bg-[#28ff1d]/10",
+  },
+];
+
+export default function ProjectsSection() {
+  return (
+    <section id="projects" className="py-20 lg:py-32 px-6 lg:px-16 space-y-12 lg:space-y-16">
+      {/* Header */}
+      <RevealOnScroll direction="up">
+        <div className="flex items-end justify-between">
+          <div className="space-y-2">
+            <p className="text-xs text-[#00dddd] tracking-[0.4em] uppercase">
+              Deployment_Registry
+            </p>
+            <h2 className="text-4xl lg:text-6xl font-bold uppercase tracking-tighter">
+              PROJECT_LOGS
+            </h2>
+          </div>
+          <div className="text-[10px] text-[#b9cac9]/40 text-right hidden sm:block">
+            ENTRIES_FOUND: 02
+            <br />
+            FILTER: PRODUCTION
+          </div>
+        </div>
+      </RevealOnScroll>
+
+      {/* Desktop grid / Mobile stack */}
+      <StaggerGrid className="grid md:grid-cols-2 gap-8" staggerDelay={0.18}>
+        {projects.map((project) => (
+          <StaggerGrid.Item key={project.id}>
+            <motion.div
+              className="group relative bg-[#201f1f] border border-[#3a4a49]/30"
+              whileHover={{
+                y: -6,
+                borderColor: "rgba(0,221,221,0.5)",
+                boxShadow: "0 16px 48px rgba(0,221,221,0.1)",
+                transition: { type: "spring", stiffness: 350, damping: 28 },
+              }}
+              whileTap={{ scale: 0.985 }}
+            >
+              {/* Mobile glow */}
+              <div
+                className={`absolute -inset-0.5 ${project.glowColor} blur opacity-0 group-hover:opacity-100 transition duration-500 md:hidden`}
+              />
+
+              {/* Image */}
+              <div className="relative aspect-video bg-[#353534] overflow-hidden">
+                <div className="absolute inset-0 bg-[#00dddd]/5 group-hover:bg-transparent transition-colors z-10" />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute top-4 right-4 z-20">
+                  <span className="px-3 py-1 bg-[#131313]/80 backdrop-blur text-[10px] text-[#00dddd] border border-[#00dddd]/30">
+                    {project.badge}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 lg:p-8 space-y-4">
+                <div className="flex justify-between items-start">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xl lg:text-2xl font-bold tracking-tight text-[#00dddd] lg:text-white">
+                      {project.title}
+                    </h3>
+                    <span className="material-symbols-outlined text-[#00dddd] md:hidden text-base">
+                      north_east
+                    </span>
+                  </div>
+                  <span className="text-[10px] text-[#b9cac9]/40 tracking-widest hidden md:block">
+                    {project.id}
+                  </span>
+                </div>
+
+                <p className="text-[#b9cac9] text-sm leading-relaxed hidden md:block">
+                  {project.description}
+                </p>
+                <p className="text-[#b9cac9] text-sm leading-relaxed md:hidden">
+                  {project.mobileDescription}
+                </p>
+
+                <div className="hidden md:flex gap-3 pt-4">
+                  {project.stack.map((tech) => (
+                    <span key={tech} className="text-[10px] uppercase text-[#b9cac9]/60">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2 pt-2 md:hidden">
+                  {project.mobileStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-[#0e0e0e] px-2 py-1 text-[9px] border border-[#3a4a49]/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="pt-4 hidden md:flex gap-3">
+                  <motion.a
+                    href={project.deploy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ backgroundColor: "#ffffff", color: "#003737" }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex-1 py-3 border border-[#3a4a49]/50 text-xs uppercase tracking-widest font-bold flex items-center justify-center"
+                  >
+                    DEPLOY_VIEW_
+                  </motion.a>
+                  <motion.a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ backgroundColor: "#00dddd", color: "#003737" }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex-1 py-3 border border-[#00dddd]/30 text-xs uppercase tracking-widest font-bold text-[#00dddd] flex items-center justify-center gap-2"
+                  >
+                    <span className="material-symbols-outlined text-sm">code</span>
+                    REPO_
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          </StaggerGrid.Item>
+        ))}
+      </StaggerGrid>
+    </section>
+  );
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>DANIEL_DEV_SYS_v1.0 | Portfolio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#131313",
+              "secondary-container": "#28ff1d",
+              "on-secondary-fixed-variant": "#015300",
+              "surface-bright": "#3a3939",
+              "on-primary-fixed-variant": "#004f4f",
+              "outline": "#839493",
+              "on-surface": "#e5e2e1",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#00fbfb",
+              "on-tertiary-fixed-variant": "#5400cc",
+              "tertiary-container": "#e9ddff",
+              "on-secondary-fixed": "#002200",
+              "surface-container-lowest": "#0e0e0e",
+              "on-primary-container": "#007070",
+              "on-primary": "#003737",
+              "surface-tint": "#00dddd",
+              "secondary": "#edffe1",
+              "on-tertiary-fixed": "#22005d",
+              "surface-container": "#201f1f",
+              "surface-variant": "#353534",
+              "on-secondary-container": "#027100",
+              "surface-container-low": "#1c1b1b",
+              "on-background": "#e5e2e1",
+              "background": "#131313",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "surface-container-high": "#2a2a2a",
+              "on-tertiary": "#3a0092",
+              "on-surface-variant": "#b9cac9",
+              "tertiary-fixed-dim": "#cfbcff",
+              "on-secondary": "#013a00",
+              "primary-fixed-dim": "#00dddd",
+              "primary": "#ffffff",
+              "inverse-surface": "#e5e2e1",
+              "tertiary": "#ffffff",
+              "surface-container-highest": "#353534",
+              "primary-container": "#00fbfb",
+              "on-primary-fixed": "#002020",
+              "secondary-fixed-dim": "#02e600",
+              "inverse-primary": "#006a6a",
+              "secondary-fixed": "#77ff61",
+              "inverse-on-surface": "#313030",
+              "tertiary-fixed": "#e9ddff",
+              "error": "#ffb4ab",
+              "outline-variant": "#3a4a49",
+              "on-tertiary-container": "#742ffc",
+              "surface": "#131313"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 255, 255, 0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            pointer-events: none;
+            animation: move 8s linear infinite;
+        }
+        @keyframes move {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+        .glitch-text {
+            text-shadow: 2px 0 #00ffff, -2px 0 #ff00ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<div class="scanline"></div>
+<!-- TopAppBar -->
+<header class="bg-[#131313] dark:bg-[#131313] flex items-center justify-between w-full px-6 py-4 pt-safe sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#00ffff] dark:text-[#00ffff]" style="font-variation-settings: 'FILL' 0;">terminal</span>
+<span class="font-['Space_Grotesk'] font-bold text-[#00ffff] tracking-[0.1em] text-sm">DANIEL_DEV_SYS_v1.0</span>
+</div>
+<div class="w-2 h-2 rounded-full bg-secondary-container animate-pulse shadow-[0_0_8px_#28ff1d]"></div>
+</header>
+<main class="pb-32">
+<!-- Hero Section -->
+<section class="px-6 pt-12 pb-24 flex flex-col items-start min-h-[707px] justify-center" id="bio">
+<div class="mb-4">
+<span class="font-label text-primary-fixed-dim tracking-[0.2em] text-[10px] uppercase">Initialize_Session</span>
+</div>
+<h1 class="font-headline font-bold text-5xl tracking-tighter uppercase mb-8 leading-[0.9] glitch-text">
+                DANIEL<br/>CAMPUZANO
+            </h1>
+<p class="font-body text-on-surface-variant text-lg mb-12 max-w-xs border-l-2 border-primary-fixed-dim pl-4">
+                Full-stack engineer specializing in high-performance digital architectures and kinetic UI systems.
+            </p>
+<div class="flex flex-col gap-4 w-full">
+<button class="bg-primary-fixed text-on-primary-fixed font-label font-bold py-4 w-full text-center tracking-widest hover:shadow-[0_0_20px_rgba(0,251,251,0.4)] transition-all">
+                    VIEW_PROJECTS
+                </button>
+<button class="border border-outline-variant text-secondary font-label py-4 w-full text-center tracking-widest hover:bg-surface-bright/10 transition-all uppercase">
+                    GET_IN_TOUCH_
+                </button>
+</div>
+<!-- Technical Metadata Decorator -->
+<div class="mt-16 flex justify-between w-full border-t border-outline-variant/30 pt-4 opacity-40">
+<span class="font-label text-[10px]">LOC: 40.7128° N</span>
+<span class="font-label text-[10px]">VER: 0.9.2-STABLE</span>
+</div>
+</section>
+<!-- About / Identity Matrix -->
+<section class="bg-surface-container-low px-6 py-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">fingerprint</span>
+</div>
+<div class="flex flex-col gap-8 relative z-10">
+<div class="w-full aspect-square bg-surface-container-lowest border border-outline-variant p-2 group overflow-hidden">
+<img alt="Daniel Campuzano" class="w-full h-full object-cover grayscale brightness-75 contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="portrait of a professional male developer with glasses in a tech-focused setting with dark atmospheric lighting and blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW9-NVVv-gckNRBRb_sMXjNk08pP3e9cfecgUgExIptZAN61WdGIHtTxQ0lO0XfpCwnvLX__IJG8OSotlh0D4BAIjawzmTRHlEuM-qoDOY4m91iO2oWOQ1Ow_Y_ZGhIF2hmZANGslGco_ACBrVOgBj_cqSApXrUWsP_27JLt1TuoUjFo1_xiOiJhcKdKr95bKDJl6VVHN118mdqoEo9oZhVre2OO0U6D23gDMVMI_ZSn42OM8iB0Tmgnoml3MfdaKYgx0VaGPeYEZV"/>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="font-headline font-bold text-2xl uppercase tracking-widest text-primary-fixed-dim">IDENTITY_MATRIX</h2>
+<div class="bg-surface-container-lowest p-6 border-l-2 border-secondary-container">
+<p class="font-label text-secondary text-xs mb-2 opacity-60">system.log_bio</p>
+<p class="font-body text-sm leading-relaxed text-on-surface">
+                            Building at the intersection of aesthetics and efficiency. My approach combines pixel-perfect precision with robust backend engineering. Focused on creating digital environments that respond with kinetic intent.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="px-6 py-20" id="projects">
+<div class="flex items-center gap-4 mb-12">
+<h2 class="font-headline font-bold text-3xl uppercase tracking-tighter">PROJECT_LOG</h2>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="flex flex-col gap-12">
+<!-- Card 1 -->
+<div class="group relative">
+<div class="absolute -inset-0.5 bg-primary-fixed-dim/20 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+<div class="relative bg-surface-container-high border border-outline-variant/40">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="futuristic AI interface visualization with glowing neural networks and data streams in cyan and dark grey colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaULewa84jbc15Bv5qV3GcwFJ4HGw4stJ53sVLj23jOmYCXhZFztSlYgqZr-ELiePOiO4JtR9hKsPwpxxaLmKpEYIlpieGygv4hSvi7edrwVqJUvKQcjg95WrriQ_fn_zjk4cFZX44Lm8otTjosrFX18ZzHHaWTbMFPgQVgXRD1dWDDhBeV8hamk5a6fYf-gMCPhqiBLMwUAgdAm33jkB1JJ6FjbDo_hqGEczQ6blCmi7PGnbQt6GrxRR25TTU-Ig-rOjGig4L_VjA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight text-primary-fixed-dim">Tailor AI</h3>
+<span class="material-symbols-outlined text-primary-fixed-dim">north_east</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-6">
+                                Advanced machine learning interface for automated pattern recognition in logistics.
+                            </p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-lowest px-2 py-1 text-[9px] font-label border border-outline-variant/30">NEXT.JS</span>
+<span class="bg-surface-container-lowest px-2 py-1 text-[9px] font-label border border-outline-variant/30">PYTORCH</span>
+<span class="bg-surface-container-lowest px-2 py-1 text-[9px] font-label border border-outline-variant/30">TAILWIND</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative">
+<div class="absolute -inset-0.5 bg-secondary-container/10 blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+<div class="relative bg-surface-container-high border border-outline-variant/40">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="clean professional dashboard showing financial charts and data visualization with minimal dark interface design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzv-YdTaYxHgevB4I0RTYjO8MGP2GJh06__Ha_VO3IhyfaYImAN2lcAExTxPpJQr5dTGC5XSEE-5AtwjH3ShVjg1h0Ka7j1tifd6XypTDoA-r4LeAc8zciM-jh3tHbSQ1ClKN2gfIeFIUrParaT4D8KX8HmOnV1cq5TP7Af7jmDb6wMq_Sr9jpsN4m0oFZCy3NU9aqybBIvVvpv5BUQIUduszhC5EDvMyFdDnnvw1mfX3YhHNkXSkJj3MyonLhwEJWkALGvmhuAke1"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight text-primary-fixed-dim">Nuestros Planes</h3>
+<span class="material-symbols-outlined text-primary-fixed-dim">north_east</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-6">
+                                High-conversion SaaS landing system with dynamic subscription orchestration.
+                            </p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-lowest px-2 py-1 text-[9px] font-label border border-outline-variant/30">REACT</span>
+<span class="bg-surface-container-lowest px-2 py-1 text-[9px] font-label border border-outline-variant/30">STRIPE</span>
+<span class="bg-surface-container-lowest px-2 py-1 text-[9px] font-label border border-outline-variant/30">NODE.JS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stack Section -->
+<section class="bg-surface-container-lowest px-6 py-20" id="stack">
+<h2 class="font-label text-xs uppercase tracking-[0.3em] text-center mb-12 opacity-50">Core_Engine_Components</h2>
+<div class="grid grid-cols-4 gap-4 max-w-sm mx-auto">
+<!-- Stack Items -->
+<div class="aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center group hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed transition-colors">code</span>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center group hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed transition-colors">data_object</span>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center group hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed transition-colors">database</span>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center group hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed transition-colors">cloud_queue</span>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center group hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed transition-colors">terminal</span>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center group hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed transition-colors">api</span>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center group hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed transition-colors">layers</span>
+</div>
+<div class="aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center group hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-fixed transition-colors">settings_input_component</span>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="font-label text-[10px] text-secondary-container tracking-widest animate-pulse uppercase">Status: Systems_Optimal</p>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="px-6 py-20 mb-10" id="contact">
+<div class="bg-[#0e0e0e] border border-outline-variant overflow-hidden">
+<!-- Terminal Header -->
+<div class="bg-surface-container-high px-4 py-2 flex items-center justify-between border-b border-outline-variant">
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-error/40"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-secondary-container/40"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/40"></div>
+</div>
+<span class="font-label text-[9px] uppercase tracking-tighter opacity-50">bash — 80x24</span>
+</div>
+<!-- Terminal Content -->
+<div class="p-6 font-mono text-sm">
+<div class="mb-4">
+<span class="text-secondary-container">C:\Users\Daniel&gt;</span>
+<span class="text-on-surface"> run send_message.sh</span>
+</div>
+<div class="mb-6">
+<p class="text-on-surface-variant mb-1">[SYSTEM]: Opening communication channel...</p>
+<p class="text-on-surface-variant">[SYSTEM]: Recipient verified: D_CAMP_DEV</p>
+</div>
+<form class="space-y-6">
+<div class="relative group">
+<div class="absolute left-0 top-0 w-0.5 h-full bg-primary-fixed-dim scale-y-0 group-focus-within:scale-y-100 transition-transform"></div>
+<input class="w-full bg-transparent border-none focus:ring-0 placeholder:text-outline-variant font-label text-sm uppercase px-4 py-2" placeholder="NAME_" type="text"/>
+</div>
+<div class="relative group">
+<div class="absolute left-0 top-0 w-0.5 h-full bg-primary-fixed-dim scale-y-0 group-focus-within:scale-y-100 transition-transform"></div>
+<input class="w-full bg-transparent border-none focus:ring-0 placeholder:text-outline-variant font-label text-sm uppercase px-4 py-2" placeholder="EMAIL_" type="email"/>
+</div>
+<div class="relative group">
+<div class="absolute left-0 top-0 w-0.5 h-full bg-primary-fixed-dim scale-y-0 group-focus-within:scale-y-100 transition-transform"></div>
+<textarea class="w-full bg-transparent border-none focus:ring-0 placeholder:text-outline-variant font-label text-sm uppercase px-4 py-2 resize-none" placeholder="MESSAGE_DATA..." rows="3"></textarea>
+</div>
+<button class="mt-4 border border-primary-fixed-dim/50 text-primary-fixed-dim px-6 py-2 font-label text-xs uppercase tracking-widest hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all w-full flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">send</span>
+                            EXECUTE_SEND
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#131313]/90 backdrop-blur-xl dark:bg-[#131313]/90 fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 shadow-[0_-4px_20px_rgba(0,255,255,0.1)]">
+<a class="flex flex-col items-center justify-center text-[#00ffff] scale-110 transition-transform" href="#bio">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05rem]">Bio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-[#00ffff] transition-colors" href="#projects">
+<span class="material-symbols-outlined">developer_mode_tv</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05rem]">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-[#00ffff] transition-colors" href="#stack">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05rem]">Stack</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/40 hover:text-[#00ffff] transition-colors" href="#contact">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.05rem]">Contact</span>
+</a>
+</nav>
+</body></html>

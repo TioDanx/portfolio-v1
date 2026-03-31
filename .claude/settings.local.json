@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__stitch__get_screen",
+      "Bash(curl -L \"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2YxZDFlZWEwZmIxNTQ2MmQ5Mzg3MThmOTc5MDk4OWEwEgsSBxC7lI284BIYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTA1MDQ3MzM2Mzk2ODkyNjY3MA&filename=&opi=89354086\" -o /d/dev/portfolio-v1/stitch/mobile/index.html)",
+      "Bash(find /d/dev/portfolio-v1 -maxdepth 2 -not -path */node_modules/* -not -path */.next/* -not -path */.git/*)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}
