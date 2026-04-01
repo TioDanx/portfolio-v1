@@ -32,7 +32,6 @@ export default function StackSection() {
       id="stack"
       className="py-20 lg:py-32 px-6 lg:px-16 bg-[#0e0e0e]"
     >
-      {/* Desktop layout */}
       <div className="hidden lg:block max-w-4xl mx-auto space-y-16">
         <RevealOnScroll direction="up">
           <div className="text-center space-y-4">
@@ -77,7 +76,6 @@ export default function StackSection() {
         </StaggerGrid>
       </div>
 
-      {/* Mobile layout */}
       <div className="lg:hidden">
         <RevealOnScroll direction="up">
           <h2 className="text-xs uppercase tracking-[0.3em] text-center mb-12 opacity-50">

@@ -43,7 +43,6 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            {/* Terminal header bar */}
             <div className="bg-[#2a2a2a] px-6 py-2 flex items-center justify-between border-b border-[#3a4a49]/30">
               <div className="flex gap-2">
                 <div className="w-3 h-3 rounded-full bg-[#ffb4ab]" />
@@ -58,7 +57,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Contact content */}
             <div className="p-6 lg:p-12 space-y-8 lg:space-y-12">
               <div>
                 <h2 className="text-2xl lg:text-4xl font-black text-white uppercase mb-4 tracking-tighter">
@@ -81,7 +79,6 @@ export default function ContactSection() {
                       whileHover={{ x: 4 }}
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     >
-                      {/* animated left border */}
                       <span
                         className={`absolute left-0 top-0 w-0.5 h-full origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 bg-[#00dddd]`}
                       />

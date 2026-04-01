@@ -7,7 +7,6 @@ export default function Footer() {
         </p>
       </footer>
 
-      {/* Background vignette data — desktop only */}
       <div className="fixed top-6 right-6 text-[10px] text-[#00dddd]/20 pointer-events-none hidden xl:block z-0">
         LAT: 34.0522° N
         <br />

@@ -13,7 +13,6 @@ export default function ContactForm() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: wire up email backend (Resend / Nodemailer)
     console.log("Transmission queued:", form);
   }
 

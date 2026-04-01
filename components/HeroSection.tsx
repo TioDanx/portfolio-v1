@@ -68,7 +68,6 @@ function ParticleCanvas() {
         if (p.y > canvas.height) p.y = 0;
       }
 
-      // Lines
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -86,7 +85,6 @@ function ParticleCanvas() {
         }
       }
 
-      // Dots
       for (const p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -124,7 +122,6 @@ export default function HeroSection() {
     >
       <ParticleCanvas />
 
-      {/* System status — desktop top-right */}
       <motion.div variants={item} className="absolute top-12 right-12 text-right hidden lg:block">
         <p className="text-[10px] text-[#00dddd]/40 tracking-[0.3em] uppercase">
           SYSTEM_STATUS: OPTIMIZED
@@ -135,7 +132,6 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="max-w-4xl space-y-6 relative">
-        {/* Initialize label */}
         <motion.div variants={item} className="inline-flex items-center gap-4 text-[#00dddd]">
           <span className="h-px w-12 bg-[#00dddd]" />
           <span className="text-sm uppercase tracking-[0.4em]">
@@ -143,7 +139,6 @@ export default function HeroSection() {
           </span>
         </motion.div>
 
-        {/* Main title */}
         <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-none tracking-tighter uppercase">
           <motion.div variants={item}>DANIEL_</motion.div>
           <motion.div variants={item}>
@@ -156,7 +151,6 @@ export default function HeroSection() {
           </motion.div>
         </h1>
 
-        {/* Subtitle */}
         <motion.p variants={item} className="text-xl md:text-2xl text-[#b9cac9] max-w-2xl leading-relaxed">
           Frontend Engineer.{" "}
           <span className="text-white">
@@ -165,7 +159,6 @@ export default function HeroSection() {
           with an engineered focus on performance.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 pt-8">
           <motion.a
             href="#projects"
@@ -188,14 +181,12 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Bounce indicator */}
       <motion.div variants={item} className="absolute bottom-12 left-6 lg:left-16 animate-bounce">
         <span className="material-symbols-outlined text-[#00dddd]">
           expand_more
         </span>
       </motion.div>
 
-      {/* Mobile metadata footer */}
       <motion.div variants={item} className="absolute bottom-12 right-6 lg:hidden text-right opacity-40">
         <p className="text-[10px] text-[#00dddd] tracking-widest">
           LOC: 40.7128° N

@@ -51,7 +51,6 @@ export default function NeonCursor() {
 
   return (
     <>
-      {/* Dot */}
       <motion.div
         className="fixed top-0 left-0 z-[9999] pointer-events-none rounded-full"
         style={{
@@ -66,7 +65,6 @@ export default function NeonCursor() {
         }}
       />
 
-      {/* Ring */}
       <motion.div
         className="fixed top-0 left-0 z-[9998] pointer-events-none rounded-full border"
         style={{

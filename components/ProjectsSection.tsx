@@ -41,7 +41,6 @@ const projects = [
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 lg:py-32 px-6 lg:px-16 space-y-12 lg:space-y-16">
-      {/* Header */}
       <RevealOnScroll direction="up">
         <div className="flex items-end justify-between">
           <div className="space-y-2">
@@ -60,7 +59,6 @@ export default function ProjectsSection() {
         </div>
       </RevealOnScroll>
 
-      {/* Desktop grid / Mobile stack */}
       <StaggerGrid className="grid md:grid-cols-2 gap-8" staggerDelay={0.18}>
         {projects.map((project) => (
           <StaggerGrid.Item key={project.id}>
@@ -74,7 +72,6 @@ export default function ProjectsSection() {
               }}
               whileTap={{ scale: 0.985 }}
             >
-              {/* Mobile glow */}
               <div
                 className={`absolute -inset-0.5 ${project.glowColor} blur opacity-0 group-hover:opacity-100 transition duration-500 md:hidden`}
               />
@@ -89,7 +86,6 @@ export default function ProjectsSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                {/* CRT scanline overlay on hover */}
                 <div
                   className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
@@ -97,7 +93,6 @@ export default function ProjectsSection() {
                       "repeating-linear-gradient(transparent, transparent 2px, rgba(0,221,221,0.04) 2px, rgba(0,221,221,0.04) 4px)",
                   }}
                 />
-                {/* PREVIEW badge slides up on hover */}
                 <div className="absolute bottom-0 left-0 right-0 z-30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-[#00dddd]/10 backdrop-blur-sm border-t border-[#00dddd]/30 px-4 py-2 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00dddd] animate-pulse" />
                   <span className="text-[10px] text-[#00dddd] tracking-[0.3em] uppercase">
@@ -111,7 +106,6 @@ export default function ProjectsSection() {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-6 lg:p-8 space-y-4">
                 <div className="flex justify-between items-start">
                   <div className="flex items-center gap-2">

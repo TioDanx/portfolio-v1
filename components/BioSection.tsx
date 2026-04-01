@@ -40,7 +40,6 @@ export default function BioSection() {
         className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center"
         staggerDelay={0.15}
       >
-        {/* Left — image */}
         <StaggerGrid.Item>
           <div className="relative group">
             <div className="absolute -inset-4 border border-[#00dddd]/20 pointer-events-none" />
@@ -66,13 +65,11 @@ export default function BioSection() {
                 height={600}
                 className="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
-              {/* Scanline overlay */}
               <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
                   background: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,221,221,0.04) 2px, rgba(0,221,221,0.04) 4px)",
                 }}
               />
-              {/* Moving glare */}
               <motion.div
                 className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
@@ -83,7 +80,6 @@ export default function BioSection() {
                   ),
                 }}
               />
-              {/* RGB split on hover */}
               <motion.div
                 className="absolute inset-0 pointer-events-none mix-blend-screen"
                 initial={{ opacity: 0, x: 0 }}
@@ -92,7 +88,6 @@ export default function BioSection() {
                 style={{ filter: "url(#rgb-r)" }}
               />
             </motion.div>
-            {/* Identity badge */}
             <div className="absolute -bottom-4 -left-4 p-6 bg-[#131313] border border-[#3a4a49]/30 glow-primary neon-pulse">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-[#00dddd]/10 flex items-center justify-center">
@@ -113,7 +108,6 @@ export default function BioSection() {
           </div>
         </StaggerGrid.Item>
 
-        {/* Right — text */}
         <StaggerGrid.Item>
           <div className="space-y-8 mt-8 lg:mt-0">
             <h2 className="text-4xl lg:text-5xl font-bold uppercase tracking-tight">
@@ -158,20 +152,18 @@ export default function BioSection() {
           </div>
         </StaggerGrid.Item>
 
-        {/* Mobile about — identity matrix */}
         <RevealOnScroll direction="up" delay={0.1}>
           <div className="lg:hidden bg-[#0e0e0e] p-6 border-l-2 border-[#28ff1d]">
             <p className="text-xs text-[#edffe1]/60 mb-2">system.log_bio</p>
             <p className="text-sm leading-relaxed text-[#e5e2e1]">
               Building at the intersection of aesthetics and efficiency. My
-              approach combines pixel-perfect precision with robust backend
+              approach combines pixel-perfect precision with robust Frontend
               engineering. Focused on creating digital environments that respond
               with kinetic intent.
             </p>
           </div>
         </RevealOnScroll>
       </StaggerGrid>
-      {/* SVG filter for RGB glitch */}
       <svg width="0" height="0" className="absolute">
         <defs>
           <filter id="rgb-r" x="-10%" y="-10%" width="120%" height="120%">
