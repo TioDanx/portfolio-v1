@@ -60,8 +60,8 @@ export default function NeonCursor() {
           translateY: "-50%",
           width: 6,
           height: 6,
-          backgroundColor: isHovering ? "#ffffff" : "#00dddd",
-          boxShadow: "0 0 6px #00dddd",
+          backgroundColor: isHovering ? "#ff003c" : "#00dddd",
+          boxShadow: isHovering ? "0 0 8px #ff003c" : "0 0 6px #00dddd",
         }}
       />
 
@@ -76,8 +76,9 @@ export default function NeonCursor() {
         animate={{
           width: ringSize,
           height: ringSize,
-          borderColor: isHovering ? "rgba(255,255,255,0.7)" : "rgba(0,221,221,0.6)",
-          backgroundColor: isHovering ? "rgba(255,255,255,0.05)" : "transparent",
+          borderColor: isHovering ? "rgba(255,0,60,0.8)" : "rgba(0,221,221,0.6)",
+          backgroundColor: isHovering ? "rgba(255,0,60,0.05)" : "transparent",
+          boxShadow: isHovering ? "0 0 12px rgba(255,0,60,0.4)" : "none",
         }}
         transition={{ duration: 0.15, ease: "easeOut" }}
         initial={{ width: 28, height: 28 }}
