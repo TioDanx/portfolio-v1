@@ -50,9 +50,9 @@ export default function SideNav() {
       className="overflow-hidden fixed left-0 top-0 h-full hidden lg:flex flex-col z-50 w-72 bg-[#131313] border-r border-[#3a4a49]/30 neon-pulse overflow-y-auto"
     >
       <div className="p-8 space-y-2">
-        <h1 className="text-lg font-bold font-mono text-[#00ffff] uppercase tracking-tighter">
+        <span className="text-lg font-bold font-mono text-[#00ffff] uppercase tracking-tighter">
           DANIEL_DEV_SYS_v1.0
-        </h1>
+        </span>
         <p className="text-[10px] uppercase tracking-[0.2em] text-[#b9cac9]/60">
           ENGINEERED_PORTFOLIO
         </p>
