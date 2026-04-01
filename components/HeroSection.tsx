@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ScrambleText from "./animations/ScrambleText";
 
 const container = {
@@ -112,13 +112,25 @@ function ParticleCanvas() {
 }
 
 export default function HeroSection() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("booted")) {
+      setReady(true);
+      return;
+    }
+    const handler = () => setReady(true);
+    window.addEventListener("boot:complete", handler);
+    return () => window.removeEventListener("boot:complete", handler);
+  }, []);
+
   return (
     <motion.section
       id="hero"
       className="relative h-screen flex flex-col justify-center px-6 lg:px-16 border-b border-[#3a4a49]/10 overflow-hidden"
       variants={container}
       initial="hidden"
-      animate="visible"
+      animate={ready ? "visible" : "hidden"}
     >
       <ParticleCanvas />
 
@@ -145,6 +157,7 @@ export default function HeroSection() {
             <ScrambleText
               text="CAMPUZANO"
               delay={600}
+              ready={ready}
               className="glitch-text text-transparent border-b-4 border-[#00dddd]"
               style={{ WebkitTextStroke: "1px white" }}
             />

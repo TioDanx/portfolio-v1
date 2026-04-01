@@ -15,7 +15,6 @@ export default function BootLoader() {
 
   useEffect(() => {
     if (sessionStorage.getItem("booted")) return;
-    sessionStorage.setItem("booted", "1");
     setVisible(true);
 
     let i = 0;
@@ -26,6 +25,8 @@ export default function BootLoader() {
         setShownLines((prev) => [...prev, line]);
         setTimeout(show, 500);
       } else {
+        sessionStorage.setItem("booted", "1");
+        window.dispatchEvent(new Event("boot:complete"));
         setTimeout(() => setFading(true), 400);
         setTimeout(() => setVisible(false), 1000);
       }
