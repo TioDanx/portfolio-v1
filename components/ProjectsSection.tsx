@@ -36,6 +36,49 @@ const projects = [
     repo: "https://github.com/TioDanx/franteamomuchomucho",
     glowColor: "bg-[#28ff1d]/10",
   },
+  {
+    id: "TS_03",
+    badge: "E-COMM",
+    title: "The Box",
+    description:
+      "E-commerce for a premium women's footwear and accessories brand based in Mar del Plata. Built on Tiendanube with MercadoPago integration and a mobile-first shopping experience designed around the brand's aesthetic.",
+    mobileDescription:
+      "Mobile-first e-commerce for a premium women's fashion brand, built on Tiendanube with MercadoPago.",
+    stack: ["Tiendanube", "Liquid", "MercadoPago", "CSS"],
+    mobileStack: ["TIENDANUBE", "LIQUID", "MERCADOPAGO"],
+    image: "/thebox.png",
+    deploy: "https://theboxmdp.com.ar/",
+    glowColor: "bg-[#00dddd]/20",
+  },
+  {
+    id: "TS_04",
+    badge: "E-COMM",
+    title: "Portal Store",
+    description:
+      "Online store for the first gaming and tech culture hub in Mar del Plata. Multi-category catalog featuring brands like ASUS, developed on Rubicom with a layout built to handle large inventories and diverse product lines.",
+    mobileDescription:
+      "Multi-category gaming store for Mar del Plata's first tech hub, featuring ASUS and more.",
+    stack: ["Rubicom", "CSS"],
+    mobileStack: ["RUBICOM", "CSS"],
+    image: "/portal.png",
+    deploy: "https://portalstore.com.ar/",
+    glowColor: "bg-[#28ff1d]/10",
+  },
+  {
+    id: "TS_05",
+    badge: "PORTFOLIO",
+    title: "Tom Martorello",
+    description:
+      "Portfolio and booking site for a Mar del Plata DJ. Features an animated hero, photo gallery, venue carousel, and embedded sets via SoundCloud and YouTube. Built with GSAP and Framer Motion to match the energy of live performance.",
+    mobileDescription:
+      "Animated DJ portfolio with booking, photo gallery, venue carousel, and SoundCloud/YouTube sets.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS v4", "Framer Motion", "GSAP"],
+    mobileStack: ["NEXT.JS", "FRAMER", "GSAP"],
+    image: "/tom.png",
+    deploy: "https://portfolio-tom-phi.vercel.app/",
+    repo: "https://github.com/campuzanodev2001/portfolio-tom",
+    glowColor: "bg-[#00dddd]/20",
+  },
 ];
 
 export default function ProjectsSection() {
@@ -52,7 +95,7 @@ export default function ProjectsSection() {
             </h2>
           </div>
           <div className="text-[10px] text-[#b9cac9]/40 text-right hidden sm:block">
-            ENTRIES_FOUND: 02
+            ENTRIES_FOUND: 05
             <br />
             FILTER: PRODUCTION
           </div>
@@ -146,31 +189,37 @@ export default function ProjectsSection() {
                   ))}
                 </div>
 
-                <div className="pt-4 hidden md:flex gap-3">
-                  <motion.a
-                    href={project.deploy}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ backgroundColor: "#ffffff", color: "#003737" }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex-1 py-3 border border-[#3a4a49]/50 text-xs uppercase tracking-widest font-bold flex items-center justify-center"
-                  >
-                    DEPLOY_VIEW_
-                  </motion.a>
-                  <motion.a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ backgroundColor: "#00dddd", color: "#003737" }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex-1 py-3 border border-[#00dddd]/30 text-xs uppercase tracking-widest font-bold text-[#00dddd] flex items-center justify-center gap-2"
-                  >
-                    <span className="material-symbols-outlined text-sm">code</span>
-                    REPO_
-                  </motion.a>
-                </div>
+                {(project.deploy || project.repo) && (
+                  <div className="pt-4 hidden md:flex gap-3">
+                    {project.deploy && (
+                      <motion.a
+                        href={project.deploy}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ backgroundColor: "#ffffff", color: "#003737" }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex-1 py-3 border border-[#3a4a49]/50 text-xs uppercase tracking-widest font-bold flex items-center justify-center"
+                      >
+                        DEPLOY_VIEW_
+                      </motion.a>
+                    )}
+                    {project.repo && (
+                      <motion.a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ backgroundColor: "#00dddd", color: "#003737" }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex-1 py-3 border border-[#00dddd]/30 text-xs uppercase tracking-widest font-bold text-[#00dddd] flex items-center justify-center gap-2"
+                      >
+                        <span className="material-symbols-outlined text-sm">code</span>
+                        REPO_
+                      </motion.a>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.div>
           </StaggerGrid.Item>
